@@ -4,7 +4,7 @@ import MenuIcon from "@mui/icons-material/Menu";
 import { makeStyles } from "@mui/styles";
 import { Button } from "@mui/material";
 import FiberManualRecordIcon from "@mui/icons-material/FiberManualRecord";
-import zIndex from "@mui/material/styles/zIndex";
+// import zIndex from "@mui/material/styles/zIndex";
 const useStyles = makeStyles({
   body: {
     margin: 0,
@@ -114,8 +114,8 @@ const useStyles = makeStyles({
       cursor: "pointer",
     },
     navElements: {
-      display: 'flex',
-      flexDirection: 'column',
+      display: "flex",
+      flexDirection: "column",
       position: "absolute",
       right: 0,
       top: 80,
@@ -126,14 +126,14 @@ const useStyles = makeStyles({
       overflow: "hidden",
     },
     navElementsActive: {
-      width: '100%',
-      zIndex: '3',
-      height: '80vh',
-      padding: '2rem 0',
-      borderTop: '1px solid white',
-      '& li': {
-        padding: '20px 10px',
-        borderBottom: '1px solid white'
+      width: "100%",
+      zIndex: "3",
+      height: "80vh",
+      padding: "2rem 0",
+      borderTop: "1px solid white",
+      "& li": {
+        padding: "20px 10px",
+        borderBottom: "1px solid white",
       },
     },
     navElementsUl: {
@@ -162,18 +162,18 @@ const Header = () => {
       setCurrentTime(new Date());
     }, 1000);
 
-    return () => clearInterval(timerId); 
+    return () => clearInterval(timerId);
   }, []);
 
   const formatTime = (date) => {
     let hours = date.getHours();
     let minutes = date.getMinutes();
     let seconds = date.getSeconds();
-    const ampm = hours >= 12 ? 'PM' : 'AM';
+    const ampm = hours >= 12 ? "PM" : "AM";
     hours = hours % 12;
-    hours = hours ? hours : 12; 
-    minutes = minutes < 10 ? '0' + minutes : minutes;
-    seconds = seconds < 10 ? '0' + seconds : seconds;
+    hours = hours ? hours : 12;
+    minutes = minutes < 10 ? "0" + minutes : minutes;
+    seconds = seconds < 10 ? "0" + seconds : seconds;
     const strTime = `${hours}:${minutes}:${seconds} ${ampm}`;
     return strTime;
   };
@@ -212,7 +212,8 @@ const Header = () => {
             </li>
           </ul>
           <div className={classes.d_flex}>
-            We’re Available <FiberManualRecordIcon color="success" /> {formatTime(currentTime)}
+            We’re Available <FiberManualRecordIcon color="success" />{" "}
+            {formatTime(currentTime)}
           </div>
           <Button variant="contained">
             <span>Get a free quote</span>
